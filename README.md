@@ -1,4 +1,4 @@
-# 23-S1-A2
+# D code
 Mountain Climber Assignment
 
 ## Getting Started
