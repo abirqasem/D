@@ -30,11 +30,53 @@ def basic_trail ():
     print(serialize(trail))
 
 
+def a_bit_complex_trail ():
+    trail = Trail (TrailSplit(
+        Trail (TrailSplit ( # the top branch
+            Trail(TrailSeries(
+                Mountain("top-top",5,3),
+                Trail(None),
+            )),
+            Trail(TrailSeries(
+                Mountain("top-bot",3,5),
+                Trail(None),
+            )),
+            Trail(TrailSeries(
+                Mountain("top-middle",4,7),
+                Trail(None),
+            )),
+        )),
+        Trail (TrailSeries ( # the bottom branch
+            Mountain("bottom-1",2,5),
+            Trail(TrailSplit (
+                Trail (None),
+                Trail (TrailSeries(
+                    Mountain("bottom-2",0,0),
+                    Trail (None),
+                )),
+                Trail (None),
+            )),
+        )),
+
+        Trail(TrailSeries( #the followig branch
+            Mountain("final",4,4),
+            Trail(None)),
+        )),
+    )
+    print(serialize(trail))
+
+
+
+
+
+
+
 
 
 
 def main():
     """ Main function """
-    basic_trail ()
+    #basic_trail ();
+    a_bit_complex_trail ()
 if __name__ == "__main__":
     main()
